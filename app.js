@@ -9,30 +9,7 @@ const movementLength = 10;
 console.log(imageBox);
 const obstacleBox = document.querySelectorAll(".obstacle-container");
 console.log(obstacleBox);
-function blockOverlap() {
-  const imageRect = imageBox.getBoundingClientRect();
-  console.log("Image Top: " + imageRect.top);
 
-  let isOverLap = true;
-  console.log(obstacleBox.length);
-  if (obstacleBox.length > 0) {
-    for (let obstacle of obstacleBox) {
-      const obstacleRect = obstacle.getBoundingClientRect();
-      console.log(obstacleRect);
-      console.log("Bottom: " + obstacleRect.bottom);
-      // if (
-      //   imageRect.top > obstacleRect.bottom ||
-      //   imageRect.bottom < obstacleRect.top ||
-      //   imageRect.left > obstacleRect.right ||
-      //   imageRect.right < obstacleRect.left
-      // ) {
-      //   isOverLap = false;
-      //   console.log(isOverLap);
-      // }
-    }
-  } else isOverLap = true;
-  return isOverLap;
-}
 window.addEventListener("keydown", (e) => {
   const imageBoxWidth = imageBox.offsetWidth;
   const imageBoxHeight = imageBox.offsetHeight;
@@ -56,9 +33,9 @@ window.addEventListener("keydown", (e) => {
   ) {
     imageBox.style.left = horizontalPosition + movementLength + "px";
   }
-  if (!blockOverlap()) {
-    imageBox.style.left = horizontalPosition + "px";
-    imageBox.style.top = verticalPosition + "px";
+  if (blockOverlap()) {
+    // imageBox.style.left = horizontalPosition + "px";
+    // imageBox.style.top = verticalPosition + "px";
   }
 });
 
@@ -66,3 +43,55 @@ window.addEventListener("click", (e) => {
   imageBox.style.left = e.x + "px";
   imageBox.style.top = e.y + "px";
 });
+
+function blockOverlap() {
+  const imageRect = imageBox.getBoundingClientRect();
+  console.log("Image Top: " + imageRect.top);
+  console.log("Image Bottom " + imageRect.bottom);
+  console.log("Image Left " + imageRect.left);
+  console.log("Image Right " + imageRect.right);
+  let isOverLap = false;
+  console.log(obstacleBox.length);
+  if (obstacleBox.length > 0) {
+    for (let obstacle of obstacleBox) {
+      const obstacleRect = obstacle.getBoundingClientRect();
+      console.log("Obstacle Top: " + obstacleRect.top);
+      console.log("Obstacle Bottom: " + obstacleRect.bottom);
+      console.log("Obstacle Left: " + obstacleRect.left);
+      console.log("Obstacle Right: " + obstacleRect.right);
+      console.log(
+        "imageRect.top < obstacleRect.bottom" + imageRect.top <
+          obstacleRect.bottom
+      );
+      console.log(
+        "imageRect.bottom > obstacleRect.top" + imageRect.bottom >
+          obstacleRect.top
+      );
+      console.log(
+        " imageRect.left < obstacleRect.right" + imageRect.left <
+          obstacleRect.right
+      );
+      console.log(
+        "imageRect.right > obstacleRect.left" + imageRect.right >
+          obstacleRect.left
+      );
+      console.log(
+        "Hele condition" +
+          (imageRect.top < obstacleRect.bottom ||
+            imageRect.bottom > obstacleRect.top ||
+            imageRect.left < obstacleRect.right ||
+            imageRect.right > obstacleRect.left)
+      );
+      if (
+        imageRect.top < obstacleRect.bottom ||
+        imageRect.bottom > obstacleRect.top ||
+        imageRect.left < obstacleRect.right ||
+        imageRect.right > obstacleRect.left
+      ) {
+        isOverLap = true;
+        console.log(isOverLap);
+      }
+    }
+  } else isOverLap = false;
+  return isOverLap;
+}
