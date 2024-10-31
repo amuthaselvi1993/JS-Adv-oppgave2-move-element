@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+#img-container {
+  position: absolute;
+  margin: 20px;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  object-fit: fill;
+}
+#image1 {
+  height: 70px;
+  width: 70px;
+  transform: rotate(45deg);
+  object-fit: cover;
+}
+.obstacle-container {
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to bottom, rgb(211, 210, 210), gray);
+  opacity: 0.9;
+  border: 1px solid black;
+}
+#obstacle1 {
+  top: 100px;
+  left: 120px;
+}
+#obstacle2 {
+  top: 300px;
+  left: 720px;
+}
