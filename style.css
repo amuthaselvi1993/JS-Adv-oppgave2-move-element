@@ -53,7 +53,7 @@ body {
 }
 #obstacle2 {
   top: 600px;
-  left: 720px;
+  left: 900px;
 }
 .collision-detected-effect {
   transform: scale(1.1);
