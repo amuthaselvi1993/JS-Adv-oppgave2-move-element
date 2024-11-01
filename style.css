@@ -52,7 +52,7 @@ body {
   left: 120px;
 }
 #obstacle2 {
-  top: 300px;
+  top: 600px;
   left: 720px;
 }
 .collision-detected-effect {
