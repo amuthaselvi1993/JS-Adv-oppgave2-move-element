@@ -7,7 +7,7 @@
 // fetching the div that holds the images
 const imageBox = document.querySelector("#img-container");
 //setting a const for reusing the arrow click action movement step size
-const movementLength = 10;
+const movementLength = 15;
 //fetching
 const obstacleBox = document.querySelectorAll(".obstacle-container");
 //getting the p tag to display error in case of collision
