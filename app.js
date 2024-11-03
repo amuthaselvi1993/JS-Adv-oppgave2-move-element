@@ -57,7 +57,8 @@ window.addEventListener("keydown", (e) => {
   ) {
     imageBox.style.left = horizontalPosition + "px";
     imageBox.style.top = verticalPosition + "px";
-    displayMessage.textContent = "Collision detected";
+    displayMessage.textContent =
+      "Collision alert! It’s a traffic jam, Please redirect";
     imageBox.classList.add("collision-detected-effect");
     setTimeout(function () {
       imageBox.classList.remove("collision-detected-effect");
@@ -79,7 +80,8 @@ window.addEventListener("click", (e) => {
     imageBox.style.left = left + "px";
     imageBox.style.top = top + "px";
   } else {
-    displayMessage.textContent = "Collision detected";
+    displayMessage.textContent =
+      "Collision alert! It’s a traffic jam, Please redirect!";
     imageBox.classList.add("collision-detected-effect");
     setTimeout(function () {
       imageBox.classList.remove("collision-detected-effect");
@@ -101,7 +103,7 @@ function checkingCollision(top, bottom, left, right) {
       right > obstacleRect.left
     ) {
       isOverLap = true;
-      console.log("Overlap detected");
+      console.log("Orlaping components");
       break; // Stop looping once an overlap is found
     }
   }
