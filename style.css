@@ -60,10 +60,10 @@ body {
 }
 #instruction {
   font-family: "Lucida Sans";
-  font-size: 0.7em;
+  font-size: 0.8em;
   position: absolute;
   top: 90%;
-  height: 50px;
+  height: 55px;
   width: 55%;
   text-align: left;
   padding: 5px;
