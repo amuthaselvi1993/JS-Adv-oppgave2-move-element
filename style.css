@@ -52,21 +52,21 @@ body {
   left: 120px;
 }
 #obstacle2 {
-  top: 600px;
-  left: 800px;
+  top: 550px;
+  left: 900px;
 }
 .collision-detected-effect {
   transform: scale(1.1);
 }
 #instruction {
   font-family: "Lucida Sans";
-  font-size: 0.6em;
+  font-size: 0.7em;
   position: absolute;
-  top: 97%;
+  top: 90%;
   height: 50px;
-  width: 30%;
+  width: 50%;
   text-align: center;
   padding: 5px;
-  color: white;
-  background-color: beige;
+  color: rgba(5, 83, 122, 0.528);
+  background: beige;
 }
