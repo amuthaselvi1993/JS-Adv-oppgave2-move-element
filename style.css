@@ -74,3 +74,37 @@ body {
     rgb(170, 165, 165)
   );
 }
+@media only screen and (max-width: 600px) {
+  .obstacle-container {
+    position: fixed;
+    height: 80px;
+    width: 80px;
+    background: linear-gradient(to bottom, rgb(211, 210, 210), gray);
+    opacity: 0.9;
+    border: 2px solid gray;
+  }
+  #obstacle1 {
+    top: 100px;
+    left: 120px;
+  }
+  #obstacle2 {
+    top: 400px;
+    left: 300px;
+  }
+  #instruction {
+    font-family: "Lucida Sans";
+    font-size: 0.7em;
+    position: absolute;
+    top: 90%;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    color: rgba(0, 8, 12);
+    background: linear-gradient(
+      to bottom,
+      rgb(211, 210, 210),
+      rgb(170, 165, 165)
+    );
+  }
+}
