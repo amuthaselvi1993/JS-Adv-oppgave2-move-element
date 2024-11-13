@@ -103,7 +103,7 @@ function checkingCollision(top, bottom, left, right) {
       right > obstacleRect.left
     ) {
       isOverLap = true;
-      console.log("Orlaping components");
+      console.log("Overlapping components");
       break; // Stop looping once an overlap is found
     }
   }
